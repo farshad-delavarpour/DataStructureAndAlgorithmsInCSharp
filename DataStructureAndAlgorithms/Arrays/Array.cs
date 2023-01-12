@@ -60,5 +60,33 @@ namespace DataStructureAndAlgorithms.Arrays
 
             return -1;
         }
+
+        public int Max()
+        {
+            if (_count == 0)
+                return -1;
+
+            var max = 0;
+
+            foreach (var item in _items)
+            {
+                if (item > max)
+                    max = item;
+            }
+            return max;
+        }
+
+        public Array Intersect(Array other)
+        {
+            var commonValues = new Array(_count);
+
+            foreach (var item in _items)
+            {
+                if (other.IndexOf(item) >= 0)
+                    commonValues.Insert(item);
+            }
+
+            return commonValues;
+        }
     }
 }

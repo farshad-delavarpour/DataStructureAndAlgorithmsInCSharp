@@ -12,6 +12,7 @@ array.RemoveAt(3);
 
 array.Print();
 
+System.Console.WriteLine($"Max => {array.Max()}");
 System.Console.WriteLine(array.IndexOf(3));
 
 Console.ReadKey();
