@@ -1,0 +1,15 @@
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\bin\Debug\net6.0\DataStructureAndAlgorithms.exe
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\bin\Debug\net6.0\DataStructureAndAlgorithms.deps.json
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\bin\Debug\net6.0\DataStructureAndAlgorithms.runtimeconfig.json
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\bin\Debug\net6.0\DataStructureAndAlgorithms.dll
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\bin\Debug\net6.0\DataStructureAndAlgorithms.pdb
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.csproj.AssemblyReference.cache
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.AssemblyInfoInputs.cache
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.AssemblyInfo.cs
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.csproj.CoreCompileInputs.cache
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.dll
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\refint\DataStructureAndAlgorithms.dll
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.pdb
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\DataStructureAndAlgorithms.genruntimeconfig.cache
+D:\Projects\DataStructureAndAlgorithms\DataStructureAndAlgorithms\obj\Debug\net6.0\ref\DataStructureAndAlgorithms.dll
