@@ -20,16 +20,7 @@ namespace DataStructureAndAlgorithms.Arrays
 
         public void Insert(int item)
         {
-            if (_items.Length == _count)
-            {
-                var newArray = new int[_count * 2];
-
-                for (var i = 0; i < _count; i++)
-                {
-                    newArray[i] = _items[i];
-                }
-                _items = newArray;
-            }
+            ResizeIfRequired();
 
             _items[_count] = (item);
 
@@ -87,6 +78,46 @@ namespace DataStructureAndAlgorithms.Arrays
             }
 
             return commonValues;
+        }
+
+        public void Reverse()
+        {
+            var reverseArray = new int[_count];
+
+            for (int i = 1; i <= _count; i++)
+            {
+                reverseArray[_count - i] = _items[i - 1];
+            }
+
+            _items = reverseArray;
+        }
+
+        public void InsertAt(int item, int index)
+        {
+            if (index >= _count)
+                throw new ArgumentOutOfRangeException();
+
+            ResizeIfRequired();
+
+            for (int i = _count - 1; i >= index; i--)
+                _items[i + 1] = _items[i];
+
+            _items[index] = item;
+            _count++;
+        }
+
+        private void ResizeIfRequired()
+        {
+            if (_items?.Length == _count)
+            {
+                var newArray = new int[_count * 2];
+
+                for (var i = 0; i < _count; i++)
+                {
+                    newArray[i] = _items[i];
+                }
+                _items = newArray;
+            }
         }
     }
 }

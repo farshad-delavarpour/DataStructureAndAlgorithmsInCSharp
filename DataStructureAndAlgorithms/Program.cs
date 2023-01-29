@@ -1,5 +1,7 @@
 ﻿using DataStructureAndAlgorithms.Arrays;
 
+#region Array
+
 var array = new DataStructureAndAlgorithms.Arrays.Array(3);
 
 array.Insert(1);
@@ -8,11 +10,13 @@ array.Insert(3);
 array.Insert(4);
 array.Insert(5);
 
-array.RemoveAt(3);
-
+array.InsertAt(8, 3);
 array.Print();
 
-System.Console.WriteLine($"Max => {array.Max()}");
-System.Console.WriteLine(array.IndexOf(3));
+#endregion
+
+#region LinkedList
+
+#endregion
 
 Console.ReadKey();
