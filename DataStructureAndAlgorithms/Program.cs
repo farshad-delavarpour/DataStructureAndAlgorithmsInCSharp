@@ -24,11 +24,10 @@ linkedList.AddLast(1);
 linkedList.AddLast(2);
 linkedList.AddLast(3);
 linkedList.AddLast(4);
-linkedList.AddLast(5);
 
-linkedList.Reverse();
+System.Console.WriteLine(linkedList.GetKthNodeFromTheEnd(2));
 
-linkedList.Print();
+
 #endregion
 
 Console.ReadKey();

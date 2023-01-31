@@ -124,9 +124,6 @@ namespace DataStructureAndAlgorithms.LinkedList
             if (IsEmpty())
                 throw new InvalidOperationException("The LinkedList is empty.");
 
-            if (IsSingle())
-                return;
-
             var previous = _first;
             var current = _first.Next;
 
@@ -144,6 +141,29 @@ namespace DataStructureAndAlgorithms.LinkedList
             _first = _last;
             _last = first;
             _last.Next = null;
+        }
+
+        public int GetKthNodeFromTheEnd(int k)
+        {
+            if (k < 1 || k > _size)
+                throw new IndexOutOfRangeException();
+
+            if (IsEmpty())
+                throw new InvalidOperationException("The LinkedList is empty.");
+
+            var current = _first;
+            var target = _first;
+
+            for (int i = 0; i < k - 1; i++)
+                target = target.Next;
+
+            while (target != _last)
+            {
+                current = current.Next;
+                target = target.Next;
+            }
+
+            return current.Value;
         }
 
         private Node GetPrevious(Node node)
