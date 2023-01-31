@@ -19,6 +19,7 @@ namespace DataStructureAndAlgorithms.LinkedList
 
         private Node _first;
         private Node _last;
+        private int _size;
 
         public void AddFirst(int item)
         {
@@ -32,6 +33,7 @@ namespace DataStructureAndAlgorithms.LinkedList
             {
                 _first = node;
             }
+            _size++;
         }
 
         public void AddLast(int item)
@@ -47,6 +49,7 @@ namespace DataStructureAndAlgorithms.LinkedList
                 _last.Next = newLastNode;
                 _last = newLastNode;
             }
+            _size++;
         }
 
         public int IndexOf(int item)
@@ -74,14 +77,14 @@ namespace DataStructureAndAlgorithms.LinkedList
                 throw new InvalidOperationException("The LinkedList is empty.");
 
             if (IsSingle())
-            {
                 _first = _last = null;
-                return;
+            else
+            {
+                var second = _first.Next;
+                _first.Next = null;
+                _first = second;
             }
-
-            var second = _first.Next;
-            _first.Next = null;
-            _first = second;
+            _size--;
         }
 
         public void RemoveLast()
@@ -90,14 +93,57 @@ namespace DataStructureAndAlgorithms.LinkedList
                 throw new InvalidOperationException("The LinkedList is empty.");
 
             if (IsSingle())
-            {
                 _first = _last = null;
-                return;
+            else
+            {
+                var lastParent = GetPrevious(_last);
+                lastParent.Next = null;
+                _last = lastParent;
+            }
+            _size--;
+        }
+
+        public int Size() => _size;
+
+        public int[] ToArray()
+        {
+            var array = new int[_size];
+            var index = 0;
+            var current = _first;
+
+            while (current != null)
+            {
+                array[index++] = current.Value;
+                current = current.Next;
             }
 
-            var lastParent = GetPrevious(_last);
-            lastParent.Next = null;
-            _last = lastParent;
+            return array;
+        }
+        public void Reverse()
+        {
+            if (IsEmpty())
+                throw new InvalidOperationException("The LinkedList is empty.");
+
+            if (IsSingle())
+                return;
+
+            var previous = _first;
+            var current = _first.Next;
+
+            while (current != null)
+            {
+                var next = current.Next;
+
+                current.Next = previous;
+
+                previous = current;
+                current = next;
+            }
+
+            var first = _first;
+            _first = _last;
+            _last = first;
+            _last.Next = null;
         }
 
         private Node GetPrevious(Node node)
