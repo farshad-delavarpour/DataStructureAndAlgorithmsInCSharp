@@ -20,9 +20,9 @@ namespace DataStructureAndAlgorithms.LinkedList
         private Node _first;
         private Node _last;
 
-        public void AddFirst(int value)
+        public void AddFirst(int item)
         {
-            Node node = new(value, _first);
+            Node node = new(item, _first);
 
             if (IsEmpty())
             {
@@ -34,9 +34,9 @@ namespace DataStructureAndAlgorithms.LinkedList
             }
         }
 
-        public void AddLast(int value)
+        public void AddLast(int item)
         {
-            Node newLastNode = new(value);
+            Node newLastNode = new(item);
 
             if (IsEmpty())
             {
@@ -47,6 +47,23 @@ namespace DataStructureAndAlgorithms.LinkedList
                 _last.Next = newLastNode;
                 _last = newLastNode;
             }
+        }
+
+        public int IndexOf(int item)
+        {
+            var index = 0;
+
+            var current = _first;
+
+            while (current != null)
+            {
+                if (current.Value == item) return index;
+
+                current = current.Next;
+                index++;
+            }
+
+            return -1;
         }
 
         public void Print()
