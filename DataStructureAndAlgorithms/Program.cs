@@ -25,12 +25,8 @@ linkedList.AddLast(5);
 linkedList.AddLast(8);
 
 linkedList.Print();
-
-System.Console.WriteLine("Index");
-
-System.Console.WriteLine(linkedList.IndexOf(5));
-System.Console.WriteLine(linkedList.IndexOf(8));
-System.Console.WriteLine(linkedList.IndexOf(9));
+linkedList.Reverse();
+linkedList.Print();
 
 #endregion
 
