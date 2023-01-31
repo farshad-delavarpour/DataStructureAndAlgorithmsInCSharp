@@ -66,6 +66,51 @@ namespace DataStructureAndAlgorithms.LinkedList
             return -1;
         }
 
+        public bool Contains(int item) => IndexOf(item) != -1;
+
+        public void RemoveFirst()
+        {
+            if (IsEmpty())
+                throw new InvalidOperationException("The LinkedList is empty.");
+
+            if (IsSingle())
+            {
+                _first = _last = null;
+                return;
+            }
+
+            var second = _first.Next;
+            _first.Next = null;
+            _first = second;
+        }
+
+        public void RemoveLast()
+        {
+            if (IsEmpty())
+                throw new InvalidOperationException("The LinkedList is empty.");
+
+            if (IsSingle())
+            {
+                _first = _last = null;
+                return;
+            }
+
+            var lastParent = GetPrevious(_last);
+            lastParent.Next = null;
+            _last = lastParent;
+        }
+
+        private Node GetPrevious(Node node)
+        {
+            var current = _first;
+            while (current != null)
+            {
+                if (current.Next == node) return current;
+                current = current.Next;
+            }
+            return null;
+        }
+
         public void Print()
         {
             var node = _first;
@@ -77,5 +122,6 @@ namespace DataStructureAndAlgorithms.LinkedList
         }
 
         private bool IsEmpty() => _first == null;
+        private bool IsSingle() => _first == _last;
     }
 }
