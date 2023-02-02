@@ -1,5 +1,6 @@
 ﻿using DataStructureAndAlgorithms.Arrays;
 using DataStructureAndAlgorithms.LinkedList;
+using DataStructureAndAlgorithms.Stack;
 
 #region Array
 
@@ -18,16 +19,19 @@ using DataStructureAndAlgorithms.LinkedList;
 
 #region LinkedList
 
-var linkedList = new LinkedList();
+// var linkedList = new LinkedList();
 
-linkedList.AddLast(1);
-linkedList.AddLast(2);
-linkedList.AddLast(3);
-linkedList.AddLast(4);
+// linkedList.AddLast(1);
+// linkedList.AddLast(2);
+// linkedList.AddLast(3);
+// linkedList.AddLast(4);
 
-System.Console.WriteLine(linkedList.GetKthNodeFromTheEnd(2));
-
+// System.Console.WriteLine(linkedList.GetKthNodeFromTheEnd(2));
 
 #endregion
 
+#region Stacks
+
+System.Console.WriteLine(StringReverser.Reverse("Farshad"));
+#endregion
 Console.ReadKey();
