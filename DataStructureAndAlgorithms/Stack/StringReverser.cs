@@ -19,5 +19,6 @@ namespace DataStructureAndAlgorithms.Stack
 
             return result.ToString();
         }
+
     }
 }

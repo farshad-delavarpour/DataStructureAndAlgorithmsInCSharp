@@ -33,5 +33,19 @@ using DataStructureAndAlgorithms.Stack;
 #region Stacks
 
 System.Console.WriteLine(StringReverser.Reverse("Farshad"));
+System.Console.WriteLine(Expression.IsBalanced("([](Test))<>"));
+
+Stack stack = new();
+
+stack.Push(10);
+stack.Push(20);
+stack.Push(30);
+
+System.Console.WriteLine(stack.Pop());
+System.Console.WriteLine(stack.Pop());
+System.Console.WriteLine(stack.Pop());
+
+stack.Pop();
+
 #endregion
 Console.ReadKey();
