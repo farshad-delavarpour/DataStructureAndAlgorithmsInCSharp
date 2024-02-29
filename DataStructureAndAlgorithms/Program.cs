@@ -1,6 +1,4 @@
 ﻿using Array = DataStructureAndAlgorithms.Arrays.Array;
-using DataStructureAndAlgorithms.LinkedList;
-using DataStructureAndAlgorithms.Stack;
 using DataStructureAndAlgorithms.Sorting;
 using DataStructureAndAlgorithms.Queue;
 using DataStructureAndAlgorithms.Test;
@@ -72,8 +70,10 @@ var array = new Array(3);
 
 #region Sorting
 
-// int[] sortedList = new int[] { 3, 4, 2, 8, 1, 10, 3, 11 };
-// sortedList.SelectionSort();
+int[] list = new int[] { 3, 4, 2, 8, 1, 10, 3, 11 };
+
+list.MergeSort();
+
 // Console.WriteLine(string.Join(", ", sortedList));
 
 #endregion

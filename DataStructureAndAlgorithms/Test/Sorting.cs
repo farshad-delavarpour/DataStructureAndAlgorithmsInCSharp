@@ -1,19 +1,26 @@
-﻿namespace DataStructureAndAlgorithms.Sorting
+﻿using System.Runtime.CompilerServices;
+
+namespace DataStructureAndAlgorithms.Sorting
 {
     internal static class Sorting
     {
         internal static int[] BubbleSort(this int[] numbers)
         {
             int length = numbers.Length;
-            for (int i = 0; i < length - 1; i++)
+            bool isSorted;
+            for (int i = 0; i < length; i++)
             {
-                for (int j = 0; j < length - i - 1; j++)
+                isSorted = true;
+                for (int j = 1; j < length - i - 1; j++)
                 {
                     if (numbers[j] > numbers[j + 1])
                     {
                         (numbers[j], numbers[j + 1]) = (numbers[j + 1], numbers[j]);
+                        isSorted = false;
                     }
                 }
+                if (isSorted)
+                    break;
             }
             return numbers;
         }
@@ -49,6 +56,54 @@
                 (list[i], list[minIndex]) = (list[minIndex], list[i]);
             }
             return list;
+        }
+
+        internal static void MergeSort(this int[] list)
+        {
+            if (list.Length < 2)
+                return;
+
+            int middle = list.Length / 2;
+
+            int[] left = new int[middle];
+            for (int i = 0; i < middle; i++)
+            {
+                left[i] = list[i];
+            }
+
+            int[] right = new int[list.Length - middle];
+            for (int i = middle; i < list.Length; i++)
+            {
+                right[i - middle] = list[i];
+            }
+
+            MergeSort(left);
+            MergeSort(right);
+
+            Merge(left, right, list);
+
+            static void Merge(int[] left, int[] right, int[] list)
+            {
+                int i = 0, j = 0, k = 0;
+
+                while (i < left.Length && j < right.Length)
+                {
+                    if (left[i] <= right[j])
+                        list[k++] = left[i++];
+                    else
+                        list[k++] = right[j++];
+                }
+
+                while (i < left.Length)
+                {
+                    list[k++] = left[i++];
+                }
+
+                while (j < right.Length)
+                {
+                    list[k++] = right[j++];
+                }
+            }
         }
 
         internal static int[] GetTwoSum(int[] numbers, int target)
