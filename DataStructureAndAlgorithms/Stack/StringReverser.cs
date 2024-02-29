@@ -13,7 +13,6 @@ namespace DataStructureAndAlgorithms.Stack
                 stack.Push(c);
             }
             StringBuilder result = new();
-
             while (stack.Count != 0)
                 result.Append(stack.Pop());
 

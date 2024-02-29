@@ -15,7 +15,7 @@ namespace DataStructureAndAlgorithms.Stack
 
         public int Pop()
         {
-            if (_count == 0)
+            if (IsEmpty())
                 throw new InvalidOperationException("The stack is empty.");
 
             return _items[--_count];
@@ -23,10 +23,26 @@ namespace DataStructureAndAlgorithms.Stack
 
         public int Peek()
         {
-            if (_count == 0)
+            if (IsEmpty())
                 throw new InvalidOperationException("The stack is empty.");
 
             return _items[_count - 1];
+        }
+
+        public bool IsEmpty()
+        {
+            return _count == 0;
+        }
+    }
+
+    public class DoubleStack
+    {
+        private int[] _items = new int[10];
+        private int _count1;
+        private int _count2;
+
+        public void Push1(int item)
+        {
         }
     }
 }

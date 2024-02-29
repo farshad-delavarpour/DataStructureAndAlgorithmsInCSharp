@@ -14,16 +14,14 @@ namespace DataStructureAndAlgorithms.Arrays
         {
             for (var i = 0; i < _count; i++)
             {
-                System.Console.WriteLine(_items[i]);
+                Console.WriteLine(_items[i]);
             }
         }
 
         public void Insert(int item)
         {
             ResizeIfRequired();
-
-            _items[_count] = (item);
-
+            _items[_count] = item;
             _count++;
         }
 
