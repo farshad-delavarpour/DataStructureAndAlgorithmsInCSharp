@@ -71,11 +71,11 @@ var array = new Array(3);
 
 #region Sorting
 
-int[] list = new int[] { 7 };
+int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
 
 // Sorting.CountSorting(list);
 
-int index = Search.BinarySearch(11, list);
+int index = Search.JumpSearch(123, list);
 
 // Console.WriteLine(string.Join(", ", sortedList));
 
