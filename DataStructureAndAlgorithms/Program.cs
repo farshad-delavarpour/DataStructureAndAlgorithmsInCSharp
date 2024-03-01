@@ -5,6 +5,7 @@ using DataStructureAndAlgorithms.Test;
 using System.Data;
 using static DataStructureAndAlgorithms.Test.Test2;
 using System.Xml.XPath;
+using DataStructureAndAlgorithms.Searching;
 
 #region Array
 
@@ -70,9 +71,11 @@ var array = new Array(3);
 
 #region Sorting
 
-int[] list = new int[] { 3, 4, 2, 8, 1, 10, 3, 11 };
+int[] list = new int[] { 7 };
 
-Sorting.CountSorting(list);
+// Sorting.CountSorting(list);
+
+int index = Search.BinarySearch(11, list);
 
 // Console.WriteLine(string.Join(", ", sortedList));
 
