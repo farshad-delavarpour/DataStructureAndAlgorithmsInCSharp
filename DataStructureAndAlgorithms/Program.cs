@@ -72,7 +72,7 @@ var array = new Array(3);
 
 int[] list = new int[] { 3, 4, 2, 8, 1, 10, 3, 11 };
 
-list.MergeSort();
+Sorting.CountSorting(list);
 
 // Console.WriteLine(string.Join(", ", sortedList));
 

@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 
 namespace DataStructureAndAlgorithms.Sorting
 {
@@ -102,6 +104,47 @@ namespace DataStructureAndAlgorithms.Sorting
                 while (j < right.Length)
                 {
                     list[k++] = right[j++];
+                }
+            }
+        }
+
+        internal static void QuickSort(int[] list, int start, int end)
+        {
+            if (start >= end)
+                return;
+            int boundry = Partition(list, start, end);
+            QuickSort(list, start, boundry - 1);
+            QuickSort(list, boundry + 1, end);
+
+            static int Partition(int[] list, int start, int end)
+            {
+                int pivort = list[end];
+                int boundry = start - 1;
+                for (int i = start; i <= end; i++)
+                {
+                    if (list[i] <= pivort)
+                    {
+                        boundry++;
+                        (list[boundry], list[i]) = (list[i], list[boundry]);
+                    }
+                }
+                return boundry;
+            }
+        }
+
+        internal static void CountSorting(int[] numbers)
+        {
+            int[] counter = new int[numbers.Max() + 1];
+            foreach (int number in numbers)
+                counter[number]++;
+
+            int index = 0;
+            for (int i = 0; i < counter.Length; i++)
+            {
+                if (counter[i] > 0)
+                {
+                    for (int j = 0; j < counter[i]; j++)
+                        numbers[index++] = i;
                 }
             }
         }
