@@ -15,9 +15,9 @@ namespace DataStructureAndAlgorithms.Sorting
                 isSorted = true;
                 for (int j = 1; j < length - i - 1; j++)
                 {
-                    if (numbers[j] > numbers[j + 1])
+                    if (numbers[j - 1] > numbers[j])
                     {
-                        (numbers[j], numbers[j + 1]) = (numbers[j + 1], numbers[j]);
+                        (numbers[j - 1], numbers[j]) = (numbers[j], numbers[j - 1]);
                         isSorted = false;
                     }
                 }
@@ -118,11 +118,11 @@ namespace DataStructureAndAlgorithms.Sorting
 
             static int Partition(int[] list, int start, int end)
             {
-                int pivort = list[end];
+                int pivot = list[end];
                 int boundry = start - 1;
                 for (int i = start; i <= end; i++)
                 {
-                    if (list[i] <= pivort)
+                    if (list[i] <= pivot)
                     {
                         boundry++;
                         (list[boundry], list[i]) = (list[i], list[boundry]);
@@ -164,24 +164,4 @@ namespace DataStructureAndAlgorithms.Sorting
             return Array.Empty<int>();
         }
     }
-
-    public class BrowserHistory
-    {
-        private LinkedList<string> _history = new();
-
-        public BrowserHistory(string homepage)
-        {
-            _history.AddFirst(homepage);
-        }
-
-        public void Visit(string url)
-        {
-            LinkedListNode<string> target;
-
-        }
-
-    }
-
-
-
 }
