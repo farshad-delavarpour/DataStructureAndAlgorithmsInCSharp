@@ -6,6 +6,7 @@ using System.Data;
 using static DataStructureAndAlgorithms.Test.Test2;
 using System.Xml.XPath;
 using DataStructureAndAlgorithms.Searching;
+using DataStructureAndAlgorithms.StringManipulation;
 
 #region Array
 
@@ -71,30 +72,26 @@ var array = new Array(3);
 
 #region Sorting
 
-int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
+// int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
 
 // Sorting.CountSorting(list);
 
-int index = Search.JumpSearch(123, list);
 
 // Console.WriteLine(string.Join(", ", sortedList));
 
 #endregion
 
 #region Test
-// Node node1 = new(1);
-// Node node2 = new(2);
-// Node node3 = new(3);
-// Node node4 = new(4);
-// Node node5 = new(5);
-
-// node1.next = node2;
-// node2.child = node3;
-// node3.next = node4;
-// node2.next = node5;
-
-// Test2 test = new();
-// Node result = test.Flatten(node1);
+Console.WriteLine(StringManipulator.GetVowelsCount("Hi my name is farshad"));
+Console.WriteLine(StringManipulator.Reverse("Hi my name is farshad"));
+Console.WriteLine(StringManipulator.ReverseWords("Hi my name is farshad"));
+Console.WriteLine(StringManipulator.IsRotation("ABCDE", "BCDEA"));
+Console.WriteLine(StringManipulator.IsRotation("ABCDE", "BCDDS"));
+Console.WriteLine(StringManipulator.RemoveDuplicate("HeeeLLLoo!!"));
+Console.WriteLine(StringManipulator.GetMostRepeatedChar("Heeeloo!!"));
+Console.WriteLine(StringManipulator.GetMostRepeatedCharWithOutHashTable("Hi Agaaain!"));
+Console.WriteLine(StringManipulator.CapitalizeAndRemoveSpace("coulD    yOU  plEAsE    work?"));
+Console.WriteLine(StringManipulator.IsAnagram("ABCDEFG", "GFABCDE"));
 #endregion
 
 
