@@ -22,12 +22,12 @@ public class StringManipulator
         Stack<char> stack = new();
         foreach (char @char in str)
             stack.Push(@char);
-        string result = "";
+        StringBuilder result = new();
         while (stack.Any())
         {
-            result += stack.Pop();
+            result.Append(stack.Pop());
         }
-        return result;
+        return result.ToString();
     }
 
     public static string ReverseWords(string str)
@@ -118,7 +118,6 @@ public class StringManipulator
     {
         if(str1.Length != str2.Length)
             return false;
-
         Dictionary<char, int> dictionary1 = new();
         Dictionary<char, int> dictionary2 = new();
 
