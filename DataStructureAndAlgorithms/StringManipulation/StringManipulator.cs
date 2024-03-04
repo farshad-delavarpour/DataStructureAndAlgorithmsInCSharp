@@ -98,6 +98,7 @@ public class StringManipulator
         return result;
     }
 
+
     public static string CapitalizeAndRemoveSpace(string str)
     {
         string[] words = str.Trim().Split(' ');

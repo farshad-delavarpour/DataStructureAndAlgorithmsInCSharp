@@ -2,7 +2,6 @@
 using DataStructureAndAlgorithms.Sorting;
 using DataStructureAndAlgorithms.Queue;
 using DataStructureAndAlgorithms.Test;
-using System.Data;
 using static DataStructureAndAlgorithms.Test.Test2;
 using System.Xml.XPath;
 using DataStructureAndAlgorithms.Searching;
@@ -37,7 +36,6 @@ var array = new Array(3);
 #endregion
 
 #region Stacks
-
 //System.Console.WriteLine(StringReverser.Reverse("Farshad"));
 //System.Console.WriteLine(Expression.IsBalanced("([](Test))<>"));
 
@@ -81,17 +79,21 @@ var array = new Array(3);
 
 #endregion
 
+#region StringManipulation
+//Console.WriteLine(StringManipulator.GetVowelsCount("Hi my name is farshad"));
+//Console.WriteLine(StringManipulator.Reverse("Hi my name is farshad"));
+//Console.WriteLine(StringManipulator.ReverseWords("Hi my name is farshad"));
+//Console.WriteLine(StringManipulator.IsRotation("ABCDE", "BCDEA"));
+//Console.WriteLine(StringManipulator.IsRotation("ABCDE", "BCDDS"));
+//Console.WriteLine(StringManipulator.RemoveDuplicate("HeeeLLLoo!!"));
+//Console.WriteLine(StringManipulator.GetMostRepeatedChar("Heeeloo!!"));
+//Console.WriteLine(StringManipulator.GetMostRepeatedCharWithOutHashTable("Hi Agaaain!"));
+//Console.WriteLine(StringManipulator.CapitalizeAndRemoveSpace("coulD    yOU  plEAsE    work?"));
+//Console.WriteLine(StringManipulator.IsAnagram("ABCDEFG", "GFABCDE"));
+#endregion
+
 #region Test
-Console.WriteLine(StringManipulator.GetVowelsCount("Hi my name is farshad"));
-Console.WriteLine(StringManipulator.Reverse("Hi my name is farshad"));
-Console.WriteLine(StringManipulator.ReverseWords("Hi my name is farshad"));
-Console.WriteLine(StringManipulator.IsRotation("ABCDE", "BCDEA"));
-Console.WriteLine(StringManipulator.IsRotation("ABCDE", "BCDDS"));
-Console.WriteLine(StringManipulator.RemoveDuplicate("HeeeLLLoo!!"));
-Console.WriteLine(StringManipulator.GetMostRepeatedChar("Heeeloo!!"));
-Console.WriteLine(StringManipulator.GetMostRepeatedCharWithOutHashTable("Hi Agaaain!"));
-Console.WriteLine(StringManipulator.CapitalizeAndRemoveSpace("coulD    yOU  plEAsE    work?"));
-Console.WriteLine(StringManipulator.IsAnagram("ABCDEFG", "GFABCDE"));
+var result = Test2.GcdOfStrings("ABABAB", "ABABAB");
 #endregion
 
 
