@@ -1,11 +1,32 @@
 using System.Collections;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace DataStructureAndAlgorithms.Test;
 
 public static class Test
 {
-
+    public static int Compress(char[] chars)
+    {
+        int i = 0, j = 0;
+        while (i < chars.Length)
+        {
+            char current = chars[i];
+            int counter = 0;
+            while (i < chars.Length && chars[i] == current)
+            {
+                i++;
+                counter++;
+            }
+            chars[j++] = current;
+            if (counter > 1)
+            {
+                foreach (char number in counter.ToString().ToCharArray())
+                    chars[j++] = number;
+            }
+        }
+        return j;
+    }
 }
 
 public class Node

@@ -6,6 +6,7 @@ using static DataStructureAndAlgorithms.Test.Test2;
 using System.Xml.XPath;
 using DataStructureAndAlgorithms.Searching;
 using DataStructureAndAlgorithms.StringManipulation;
+using System.Text;
 
 #region Array
 
@@ -93,7 +94,8 @@ var array = new Array(3);
 #endregion
 
 #region Test
-var result = Test2.GcdOfStrings("ABABAB", "ABABAB");
+//var result = Test2.GcdOfStrings("ABABAB", "ABABAB");
+var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
 #endregion
 
 
