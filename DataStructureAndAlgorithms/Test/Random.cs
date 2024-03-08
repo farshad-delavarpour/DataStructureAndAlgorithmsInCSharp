@@ -89,6 +89,39 @@ namespace DataStructureAndAlgorithms.Test
 
             return result.ToString();
         }
+
+        public static int MaxVowels(string s, int k)
+        {
+            char[] vowels = new char[5] { 'i', 'a', 'u', 'o', 'e' };
+            int maxVowels;
+            int tempCounter = 0;
+            int leftIndex = 0;
+            for (int i = 0; i < k; i++)
+            {
+                if (vowels.Contains(s[i]))
+                    tempCounter++;
+            }
+            maxVowels = tempCounter;
+            for(int i = k; i < s.Length; i++)
+            {
+                if (tempCounter == k)
+                    return k;
+
+                if (vowels.Contains(s[i]) && !vowels.Contains(s[leftIndex]))
+                {
+                    tempCounter++;
+                }
+                else if (vowels.Contains(s[leftIndex]) && !vowels.Contains(s[i]))
+                {
+                    tempCounter--;
+                }
+                if (tempCounter > maxVowels)
+                    maxVowels = tempCounter;
+                leftIndex++;
+            }
+
+            return maxVowels;
+        }
     }
 
 }

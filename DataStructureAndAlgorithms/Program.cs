@@ -99,7 +99,9 @@ Sorting.QuickSort(list, 0, list.Length - 1);
 //var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
 
 //LeetCode.ReverseList(node);
-var test = DataStructureAndAlgorithms.Test.Random.ReverseVowels("hello");
+int[] list2 = new int[] {0, 4, 0, 3, 2, 10, 11, 12, 21, 0, 1, -1};
+
+var test = DataStructureAndAlgorithms.Test.Random.MaxVowels("abciiidef", 3);
 #endregion
 
 
