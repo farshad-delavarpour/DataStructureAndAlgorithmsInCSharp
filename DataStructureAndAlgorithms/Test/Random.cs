@@ -38,126 +38,177 @@ namespace DataStructureAndAlgorithms.Test
             return Fib(n - 1) + Fib(n - 2);
         }
 
-
-    }
-
-    public static class LeetCode
-    {
-        public static int MaxOperations(int[] nums, int k)
+        public static bool CanPlaceFlowers(int[] flowerbed, int n)
         {
-            Array.Sort(nums);
-
-            int i = 0, j = nums.Length - 1;
-            int count = 0;
-
-            while (i < j)
+            // [1, 0, 0, 0, 1]
+            int i = 0, j = 1;
+            int result = 0;
+            while (j < flowerbed.Length)
             {
-                int sum = nums[i] + nums[j];
-                if (sum == k)
+                if (flowerbed[i] + flowerbed[j] == 0)
                 {
-                    count++;
+                    flowerbed[i] = 1;
+                    result++;
                     i++;
-                    j--;
+                    j++;
                 }
-                else if (sum > k)
+            }
+
+            return result == n;
+        }
+
+        public static string ReverseVowels(string s)
+        {
+            char[] vowels = new char[5] { 'a', 'e', 'i', 'o', 'u' };
+            Stack<char> stack = new();
+
+            for (int k = 0; k < s.Length; k++)
+            {
+                if (vowels.Contains(char.ToLower(s[k])))
                 {
-                    j--;
+                    stack.Push(s[k]);
+                }
+            }
+
+            if (!stack.Any())
+                return s;
+
+            StringBuilder result = new();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (vowels.Contains(char.ToLower(s[i])))
+                {
+                    result.Append(stack.Pop());
                 }
                 else
                 {
-                    i++;
+                    result.Append(s[i]);
                 }
-
             }
-            return count;
+
+            return result.ToString();
         }
+    }
 
-        public class ListNode
+}
+
+public static class LeetCode
+{
+    public static int MaxOperations(int[] nums, int k)
+    {
+        Array.Sort(nums);
+
+        int i = 0, j = nums.Length - 1;
+        int count = 0;
+
+        while (i < j)
         {
-            public int val;
-            public ListNode next;
-            public ListNode(int val = 0, ListNode next = null)
+            int sum = nums[i] + nums[j];
+            if (sum == k)
             {
-                this.val = val;
-                this.next = next;
+                count++;
+                i++;
+                j--;
             }
+            else if (sum > k)
+            {
+                j--;
+            }
+            else
+            {
+                i++;
+            }
+
         }
+        return count;
+    }
 
-        public static ListNode ReverseList(ListNode head)
+    public class ListNode
+    {
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null)
         {
-            if (head is null)
-                return head;
-            ListNode previous = head;
-            ListNode current = head.next;
-            previous.next = null;
-            while (current != null)
-            {
-                ListNode next = current.next;
-                current.next = previous;
-
-                previous = current;
-                current = next;
-            }
-            return previous;
+            this.val = val;
+            this.next = next;
         }
+    }
 
-        public static ListNode DeleteMiddle(ListNode head)
-        {
-            ListNode current = head;
-            ListNode target = head;
-            while (current != null && current.next != null)
-            {
-                target = target.next;
-                current = current.next.next;
-            }
-            target.next = target.next.next;
+    public static ListNode ReverseList(ListNode head)
+    {
+        if (head is null)
             return head;
-        }
-
-        public static ListNode OddEvenList(ListNode head)
+        ListNode previous = head;
+        ListNode current = head.next;
+        previous.next = null;
+        while (current != null)
         {
-            ListNode lastOdd = head;
-            ListNode lastEven = head.next;
-            ListNode firstEven = head.next;
+            ListNode next = current.next;
+            current.next = previous;
 
-            while (lastEven != null)
-            {
-                lastOdd.next = lastEven.next;
-                lastEven.next = lastEven.next.next;
-                lastOdd.next.next = firstEven;
-                lastOdd = lastOdd.next;
-                lastEven = lastEven.next;
-            }
-            return head;
+            previous = current;
+            current = next;
         }
+        return previous;
+    }
 
-        // 1 -> 2 -> 3 -> 4 -> 5 -> 6
-        public static int PairSum(ListNode head)
+    public static ListNode DeleteMiddle(ListNode head)
+    {
+        ListNode current = head;
+        ListNode target = head;
+        while (current != null && current.next != null)
         {
-            if(head == null || head.next == null) return 0;
-            Stack<int> stack = new();
-            ListNode slow = new(0, head);
-            ListNode fast = head;
-            
-            while (fast != null && fast.next != null)
-            {
-                slow = slow.next;
-                fast = fast.next.next;
-                stack.Push(slow.val);
-            }
+            target = target.next;
+            current = current.next.next;
+        }
+        target.next = target.next.next;
+        return head;
+    }
 
+    public static ListNode OddEvenList(ListNode head)
+    {
+        ListNode lastOdd = head;
+        ListNode lastEven = head.next;
+        ListNode firstEven = head.next;
+
+        while (lastEven != null)
+        {
+            lastOdd.next = lastEven.next;
+            lastEven.next = lastEven.next.next;
+            lastOdd.next.next = firstEven;
+            lastOdd = lastOdd.next;
+            lastEven = lastEven.next;
+        }
+        return head;
+    }
+
+    // 1 -> 2 -> 3 -> 4 -> 5 -> 6
+    public static int PairSum(ListNode head)
+    {
+        if (head == null || head.next == null) return 0;
+        Stack<int> stack = new();
+        ListNode slow = new(0, head);
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null)
+        {
             slow = slow.next;
-            int result = 0;
-
-            while (slow != null)
-            {
-                int sum = slow.val + stack.Pop();
-                if (sum > result)
-                    result = sum;
-                slow = slow.next;
-            }
-
-            return result;
+            fast = fast.next.next;
+            stack.Push(slow.val);
         }
+
+        slow = slow.next;
+        int result = 0;
+
+        while (slow != null)
+        {
+            int sum = slow.val + stack.Pop();
+            if (sum > result)
+                result = sum;
+            slow = slow.next;
+        }
+
+        return result;
     }
 }
