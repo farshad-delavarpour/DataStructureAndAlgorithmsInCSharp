@@ -122,6 +122,96 @@ namespace DataStructureAndAlgorithms.Test
 
             return maxVowels;
         }
+
+        public static int LongestOnes(int[] nums, int k)
+        {
+            int windowStart = 0;
+            int maxLength = 0;
+            int maxOnesCount = 0;
+
+            for (int windowEnd = 0; windowEnd < nums.Length; windowEnd++)
+            {
+                if (nums[windowEnd] == 1)
+                    maxOnesCount++;
+
+                if (windowEnd - windowStart + 1 - maxOnesCount > k) // the zeros
+                {
+                    if (nums[windowStart++] == 1)
+                        maxOnesCount--;
+                }
+                maxLength = Math.Max(maxLength, windowEnd - windowStart + 1);
+            }
+
+            return maxLength;
+        }
+
+        public static int LongestSubarray(int[] nums)
+        {
+            int oneCounts = 0;
+            int start = 0;
+            int longest = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1)
+                    oneCounts++;
+                if (i - start + 1 - oneCounts > 1)
+                {
+                    if (nums[start++] == 1)
+                        oneCounts--;
+                }
+                longest = Math.Max(longest, i - start + 1);
+            }
+            return longest;
+        }
+
+        public static int LargestAltitude(int[] gain)
+        {
+            int highest = 0;
+            int current = 0;
+            foreach (int number in gain)
+            {
+                current += number;
+                if (current > highest)
+                    highest = current;
+            }
+            return highest;
+        }
+
+        public static int PivotIndex(int[] nums)
+        {
+            int[] rightSum = new int[nums.Length];
+            int tempSum = 0;
+            for (int i = nums.Length - 1; i >= 0; i--)
+            {
+                tempSum += nums[i];
+                rightSum[i] = tempSum;
+            }
+            tempSum = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                tempSum += nums[i];
+                if (tempSum == rightSum[i])
+                    return i;
+            }
+            return -1;
+        }
+
+        public static string RemoveStars(string s)
+        {
+            Stack<char> history = new();
+            foreach(char @char in s)
+            {
+                if(@char != '*')
+                    history.Push(@char);
+                else
+                {
+                    if(history.Any())
+                        history.Pop();
+                }
+            }
+            return new string(history.Reverse().ToArray());
+        }
     }
 
 }

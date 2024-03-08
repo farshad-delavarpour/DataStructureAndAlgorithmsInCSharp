@@ -99,9 +99,10 @@ Sorting.QuickSort(list, 0, list.Length - 1);
 //var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
 
 //LeetCode.ReverseList(node);
-int[] list2 = new int[] {0, 4, 0, 3, 2, 10, 11, 12, 21, 0, 1, -1};
+int[] list2 = new int[] { 1, 7, 3, 6, 5, 6 };
 
-var test = DataStructureAndAlgorithms.Test.Random.MaxVowels("abciiidef", 3);
+//var test = DataStructureAndAlgorithms.Test.Random.PivotIndex(list2);
+var test2 = DataStructureAndAlgorithms.Test.Random.RemoveStars("*Farr*shadhe**");
 #endregion
 
 
