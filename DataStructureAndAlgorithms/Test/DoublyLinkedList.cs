@@ -37,7 +37,6 @@ public class DoublyLinkedList<T>
         Size++;
     }
 
-    // 1, 2, 3, 4, 5
     public List<T> GetRange(int start, int end)
     {
         if (end <= start)

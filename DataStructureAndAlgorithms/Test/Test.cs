@@ -52,6 +52,7 @@ public class Test2
 
     private void Process(Node node)
     {
+        
         while (node != null)
         {
             list.AddLast(new Node(node.val));

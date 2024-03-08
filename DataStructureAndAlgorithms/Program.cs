@@ -7,6 +7,7 @@ using System.Xml.XPath;
 using DataStructureAndAlgorithms.Searching;
 using DataStructureAndAlgorithms.StringManipulation;
 using System.Text;
+using static DataStructureAndAlgorithms.Test.LeetCode;
 
 #region Array
 
@@ -71,7 +72,8 @@ var array = new Array(3);
 
 #region Sorting
 
-// int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
+int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
+Sorting.QuickSort(list, 0, list.Length - 1);
 
 // Sorting.CountSorting(list);
 
@@ -95,7 +97,11 @@ var array = new Array(3);
 
 #region Test
 //var result = Test2.GcdOfStrings("ABABAB", "ABABAB");
-var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
+//var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
+
+ListNode node = new (10, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, null))))));
+//LeetCode.ReverseList(node);
+LeetCode.PairSum(node);
 #endregion
 
 

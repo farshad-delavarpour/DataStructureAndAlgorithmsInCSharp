@@ -37,5 +37,127 @@ namespace DataStructureAndAlgorithms.Test
 
             return Fib(n - 1) + Fib(n - 2);
         }
+
+
+    }
+
+    public static class LeetCode
+    {
+        public static int MaxOperations(int[] nums, int k)
+        {
+            Array.Sort(nums);
+
+            int i = 0, j = nums.Length - 1;
+            int count = 0;
+
+            while (i < j)
+            {
+                int sum = nums[i] + nums[j];
+                if (sum == k)
+                {
+                    count++;
+                    i++;
+                    j--;
+                }
+                else if (sum > k)
+                {
+                    j--;
+                }
+                else
+                {
+                    i++;
+                }
+
+            }
+            return count;
+        }
+
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int val = 0, ListNode next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
+        }
+
+        public static ListNode ReverseList(ListNode head)
+        {
+            if (head is null)
+                return head;
+            ListNode previous = head;
+            ListNode current = head.next;
+            previous.next = null;
+            while (current != null)
+            {
+                ListNode next = current.next;
+                current.next = previous;
+
+                previous = current;
+                current = next;
+            }
+            return previous;
+        }
+
+        public static ListNode DeleteMiddle(ListNode head)
+        {
+            ListNode current = head;
+            ListNode target = head;
+            while (current != null && current.next != null)
+            {
+                target = target.next;
+                current = current.next.next;
+            }
+            target.next = target.next.next;
+            return head;
+        }
+
+        public static ListNode OddEvenList(ListNode head)
+        {
+            ListNode lastOdd = head;
+            ListNode lastEven = head.next;
+            ListNode firstEven = head.next;
+
+            while (lastEven != null)
+            {
+                lastOdd.next = lastEven.next;
+                lastEven.next = lastEven.next.next;
+                lastOdd.next.next = firstEven;
+                lastOdd = lastOdd.next;
+                lastEven = lastEven.next;
+            }
+            return head;
+        }
+
+        // 1 -> 2 -> 3 -> 4 -> 5 -> 6
+        public static int PairSum(ListNode head)
+        {
+            if(head == null || head.next == null) return 0;
+            Stack<int> stack = new();
+            ListNode slow = new(0, head);
+            ListNode fast = head;
+            
+            while (fast != null && fast.next != null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+                stack.Push(slow.val);
+            }
+
+            slow = slow.next;
+            int result = 0;
+
+            while (slow != null)
+            {
+                int sum = slow.val + stack.Pop();
+                if (sum > result)
+                    result = sum;
+                slow = slow.next;
+            }
+
+            return result;
+        }
     }
 }
