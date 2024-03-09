@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,21 @@ namespace DataStructureAndAlgorithms.Test
             }
 
             return test.FirstOrDefault(i => i.Value == 1).Key;
+        }
+
+        public static int BinarySearch(this int[] array, int target)
+        {
+            Array.Sort(array);
+            return Search(0, array.Length - 1);
+            int Search(int start, int end)
+            {
+                int middle = end / 2;
+                if (target == array[middle])
+                    return middle;
+                if (middle == start || middle == end)
+                    return -1;
+                return target < array[middle] ? Search(start, middle -1) : Search(middle + 1, end);
+            }
         }
 
         public static IEnumerable<int> ReturnUnique(IEnumerable<int> list)
@@ -102,7 +118,7 @@ namespace DataStructureAndAlgorithms.Test
                     tempCounter++;
             }
             maxVowels = tempCounter;
-            for(int i = k; i < s.Length; i++)
+            for (int i = k; i < s.Length; i++)
             {
                 if (tempCounter == k)
                     return k;
@@ -200,19 +216,53 @@ namespace DataStructureAndAlgorithms.Test
         public static string RemoveStars(string s)
         {
             Stack<char> history = new();
-            foreach(char @char in s)
+            foreach (char @char in s)
             {
-                if(@char != '*')
+                if (@char != '*')
                     history.Push(@char);
                 else
                 {
-                    if(history.Any())
+                    if (history.Any())
                         history.Pop();
                 }
             }
             return new string(history.Reverse().ToArray());
         }
 
+        /// <summary>
+        /// 735. Asteroid Collision
+        /// </summary>
+        /// <param name="asteroids"></param>
+        /// <returns></returns>
+        public static int[] AsteroidCollision(int[] asteroids)
+        {
+            // 10, -5
+            Stack<int> result = new();
+            foreach (int asteroid in asteroids)
+            {
+                if (asteroid > 0)
+                {
+                    result.Push(asteroid);
+                }
+                else
+                {
+                    while (result.Count > 0 && (asteroid + result.Peek() < 0))
+                    {
+                        result.Pop();
+                    }
+                    if (result.Count > 0 && (asteroid + result.Peek() == 0))
+                    {
+                        result.Pop();
+                        continue;
+                    }
+                    else if (result.Count == 0 || result.Peek() < 0)
+                    {
+                        result.Push(asteroid);
+                    }
+                }
+            }
+            return result.Reverse().ToArray();
+        }
     }
 
 }

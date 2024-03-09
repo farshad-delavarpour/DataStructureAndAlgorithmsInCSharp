@@ -40,10 +40,10 @@ public class DoublyLinkedList<T>
     public List<T> GetRange(int start, int end)
     {
         if (end <= start)
-            throw new ArgumentOutOfRangeException();
+            throw new InvalidOperationException();
 
         if (end > Size)
-            throw new IndexOutOfRangeException();
+            throw new InvalidOperationException();
 
         List<T> result = new();
         int counter = 0;

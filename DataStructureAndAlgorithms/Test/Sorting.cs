@@ -134,22 +134,6 @@ namespace DataStructureAndAlgorithms.Sorting
             }
         }
 
-        internal static void QuickSort2(int[] list, int start, int end)
-        {
-            int pivot = list[end];
-            int boundry = start - 1;
-            for(int i = start;  i <= end; i++)
-            {
-                if (list[i] <= pivot)
-                {
-                    boundry++;
-                    (list[boundry], list[i]) = (list[i], list[boundry]);
-                }
-            }
-        }
-
-
-
         internal static void CountSorting(int[] numbers)
         {
             int[] counter = new int[numbers.Max() + 1];

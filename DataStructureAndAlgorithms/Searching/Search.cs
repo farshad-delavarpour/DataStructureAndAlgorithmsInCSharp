@@ -18,7 +18,7 @@ public class Search
 
     public static int BinarySearch(int target, int[] numbers)
     {
-        Sorting.Sorting.MergeSort(numbers);
+        Array.Sort(numbers);
 
         return Search(0, numbers.Length - 1);
 
@@ -37,8 +37,7 @@ public class Search
 
     public static int BinarySearchIterative(int target, int[] numbers)
     {
-        Sorting.Sorting.MergeSort(numbers);
-
+        Array.Sort(numbers);
         int left = 0, right = numbers.Length - 1;
 
         while (left <= right)
@@ -56,7 +55,7 @@ public class Search
 
     public static int TernarySearch(int target, int[] numbers)
     {
-        Sorting.Sorting.MergeSort(numbers);
+        Array.Sort(numbers);
 
         return Search(0, numbers.Length - 1);
 

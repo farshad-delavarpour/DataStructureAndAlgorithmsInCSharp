@@ -28,7 +28,7 @@ namespace DataStructureAndAlgorithms.Arrays
         public void RemoveAt(int index)
         {
             if (index >= _count)
-                throw new IndexOutOfRangeException();
+                throw new InvalidOperationException();
 
             for (int i = index; i < _count; i++)
             {

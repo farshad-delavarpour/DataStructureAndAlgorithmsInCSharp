@@ -55,7 +55,6 @@ namespace DataStructureAndAlgorithms.LinkedList
         public int IndexOf(int item)
         {
             var index = 0;
-
             var current = _first;
 
             while (current != null)

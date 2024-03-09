@@ -31,15 +31,6 @@ namespace DataStructureAndAlgorithms.HashTables
                 Value = value
             };
             LinkedList<KeyValuePair> item = _items[index];
-            if(item is null)
-            {
-                LinkedList<KeyValuePair> linkedList = new();
-                linkedList.AddFirst(keyValuePair);
-            }
-            else
-            {
-               
-            }
         }
     }
 }

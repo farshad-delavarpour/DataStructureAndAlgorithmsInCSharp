@@ -99,10 +99,13 @@ Sorting.QuickSort(list, 0, list.Length - 1);
 //var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
 
 //LeetCode.ReverseList(node);
-int[] list2 = new int[] { 1, 7, 3, 6, 5, 6 };
+int[] list2 = new int[] { 10, 2, -5, 1, 2, -3, 11, 12, -5, -7, -13, 20 };
+int[] list3 = new int[] { -10, -22, -5, 1, 2, -3, 11, 12, -5, -7, -13, 20 };
 
 //var test = DataStructureAndAlgorithms.Test.Random.PivotIndex(list2);
-var test2 = DataStructureAndAlgorithms.Test.Random.RemoveStars("*Farr*shadhe**");
+//var test2 = DataStructureAndAlgorithms.Test.Random.RemoveStars("*Farr*shadhe**");
+var test3 = DataStructureAndAlgorithms.Test.Random.AsteroidCollision(list2);
+var test33 = DataStructureAndAlgorithms.Test.Random.AsteroidCollision(list3);
 #endregion
 
 
