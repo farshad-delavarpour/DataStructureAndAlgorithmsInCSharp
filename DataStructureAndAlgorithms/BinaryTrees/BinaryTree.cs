@@ -22,9 +22,9 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             Node current = _root;
             while (true)
             {
-                if(current.Value < value)
+                if (current.Value < value)
                 {
-                    if(current.Left == null)
+                    if (current.Left == null)
                     {
                         current.Left = node;
                         break;
@@ -33,7 +33,7 @@ namespace DataStructureAndAlgorithms.BinaryTrees
                 }
                 else
                 {
-                    if(current.Right == null)
+                    if (current.Right == null)
                     {
                         current.Right = node;
                         break;
@@ -46,13 +46,13 @@ namespace DataStructureAndAlgorithms.BinaryTrees
         public bool Find(int value)
         {
             Node current = _root;
-            while(current != null)
+            while (current != null)
             {
-                if(current.Value == value)
+                if (current.Value == value)
                 {
                     return true;
                 }
-                if(current.Value < value)
+                if (current.Value < value)
                 {
                     current = current.Left;
                 }
@@ -64,6 +64,50 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             return false;
         }
 
+        public void TraverseInOrder()
+        {
+            TraverseInOrder(_root);
+        }
+
+        private void TraverseInOrder(Node root)
+        {
+            if (root is null)
+                return;
+
+            TraverseInOrder(root.Left);
+            Console.WriteLine(root);
+            TraverseInOrder(root.Right);
+        }
+
+        public void TraversePostOrder()
+        {
+            TraversePostOrder(_root);
+        }
+
+        private void TraversePostOrder(Node root)
+        {
+            if (root is null)
+                return;
+
+            TraverseInOrder(root.Left);
+            TraverseInOrder(root.Right);
+            Console.WriteLine(root);
+        }
+
+        public void TraversePreOrder()
+        {
+            TraversePreOrder(_root);
+        }
+
+        private void TraversePreOrder(Node root)
+        {
+            if (root == null)
+                return;
+            Console.WriteLine(root.Value);
+            TraversePreOrder(root.Left);
+            TraversePreOrder(root.Right);
+        }
+
 
         private class Node
         {
@@ -71,6 +115,7 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             {
                 return Value.ToString();
             }
+
             public Node(int value)
             {
                 Value = value;
