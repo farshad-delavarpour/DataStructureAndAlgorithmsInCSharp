@@ -29,8 +29,33 @@ namespace DataStructureAndAlgorithms.AVLTrees
             {
                 root.Left = Insert(root.Left, value);
             }
+
             root.Height = Math.Max(Height(root.Left), Height(root.Right)) + 1;
+
+            if(IsLeftHeavy(root))
+            {
+                Console.WriteLine($"{root.Value} is left heavy");
+            }
+            else if (IsRightHeavy(root))
+            {
+                Console.WriteLine($"{root.Value} is right heavy");
+            }
             return root;
+        }
+
+        private bool IsLeftHeavy(AVLNode node)
+        {
+            return BalanceFactor(node) > 1;
+        }
+        
+        private bool IsRightHeavy(AVLNode node)
+        {
+            return BalanceFactor(node) < -1;
+        }
+
+        private int BalanceFactor(AVLNode node)
+        {
+            return node == null ? 0 : Height(node.Left) - Height(node.Right);
         }
 
         private int Height(AVLNode node)
