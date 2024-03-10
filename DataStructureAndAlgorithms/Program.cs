@@ -7,6 +7,7 @@ using System.Xml.XPath;
 using DataStructureAndAlgorithms.Searching;
 using DataStructureAndAlgorithms.StringManipulation;
 using System.Text;
+using DataStructureAndAlgorithms.BinaryTrees;
 
 #region Array
 
@@ -71,8 +72,8 @@ var array = new Array(3);
 
 #region Sorting
 
-int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
-Sorting.QuickSort(list, 0, list.Length - 1);
+//int[] list = new int[] { 7, 3, 1, 9, 5, 5, 4, 2, 11, 123, 23, 13, 115, 9 };
+//Sorting.QuickSort(list, 0, list.Length - 1);
 
 // Sorting.CountSorting(list);
 
@@ -99,14 +100,30 @@ Sorting.QuickSort(list, 0, list.Length - 1);
 //var result = Test.Compress(new char[7] { 'a', 'a', 'b', 'b', 'c', 'c', 'c' });
 
 //LeetCode.ReverseList(node);
-int[] list2 = new int[] { 10, 2, -5, 1, 2, -3, 11, 12, -5, -7, -13, 20 };
-int[] list3 = new int[] { -10, -22, -5, 1, 2, -3, 11, 12, -5, -7, -13, 20 };
+//int[] list2 = new int[] { 10, 2, -5, 1, 2, -3, 11, 12, -5, -7, -13, 20 };
+//int[] list3 = new int[] { -10, -22, -5, 1, 2, -3, 11, 12, -5, -7, -13, 20 };
 
 //var test = DataStructureAndAlgorithms.Test.Random.PivotIndex(list2);
 //var test2 = DataStructureAndAlgorithms.Test.Random.RemoveStars("*Farr*shadhe**");
-var test3 = DataStructureAndAlgorithms.Test.Random.AsteroidCollision(list2);
-var test33 = DataStructureAndAlgorithms.Test.Random.AsteroidCollision(list3);
+//var test3 = DataStructureAndAlgorithms.Test.Random.AsteroidCollision(list2);
+//var test33 = DataStructureAndAlgorithms.Test.Random.AsteroidCollision(list3);
 #endregion
 
-
+#region Tree
+BinaryTree tree = new();
+tree.Add(7);
+tree.Add(8);
+tree.Add(10);
+tree.Add(4);
+tree.Add(5);
+tree.Add(4);
+tree.Add(9);
+tree.TraversePreOrder();
+Console.WriteLine("-----------------");
+tree.TraverseInOrder();
+Console.WriteLine("-----------------");
+tree.TraversePostOrder();
+Console.WriteLine("-----------------");
+Console.WriteLine(tree.Min());
+#endregion
 Console.ReadKey();

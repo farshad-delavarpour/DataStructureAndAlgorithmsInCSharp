@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DataStructureAndAlgorithms.BinaryTrees
 {
     public class BinaryTree
@@ -64,6 +59,7 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             return false;
         }
 
+        #region Traverse
         public void TraverseInOrder()
         {
             TraverseInOrder(_root);
@@ -107,8 +103,64 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             TraversePreOrder(root.Left);
             TraversePreOrder(root.Right);
         }
+        #endregion
 
+        public bool Equals(BinaryTree tree)
+        {
+            return Equals(_root, tree._root);
+        }
 
+        private bool Equals(Node first, Node second)
+        {
+            if (first == null && second == null)
+                return true;
+            
+            if(first != null && second != null)
+                return first.Value == second.Value && Equals(first.Left, second.Left) && Equals(first.Right, second.Right);
+            
+            return false;
+        }
+        public int Height()
+        {
+            return Height(_root);
+        }
+
+        private int Height(Node root)
+        {
+            if (root == null)
+                return -1;
+
+            if (root.Left is null && root.Right is null)
+                return 0;
+
+            return 1 + Math.Max(Height(root.Left), Height(root.Right));
+        }
+
+        public int Min()
+        {
+            if(_root == null)
+                return -1;
+            return Min(_root);
+        }
+
+        private int Min(Node node)
+        {
+            if (node is null)
+                return int.MaxValue;
+
+            if (IsLeaf(node))
+                return node.Value;
+
+            return Math.Min(node.Value, Math.Min(Min(node.Left), Min(node.Right)));
+        }
+
+        private static bool IsLeaf(Node node)
+        {
+            return node.Left == null && node.Right == null;
+        }
+        //      3
+        //  2     5
+        //1     4        
         private class Node
         {
             public override string ToString()
