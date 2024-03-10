@@ -8,6 +8,7 @@ using DataStructureAndAlgorithms.Searching;
 using DataStructureAndAlgorithms.StringManipulation;
 using System.Text;
 using DataStructureAndAlgorithms.BinaryTrees;
+using DataStructureAndAlgorithms.AVLTrees;
 
 #region Array
 
@@ -110,20 +111,31 @@ var array = new Array(3);
 #endregion
 
 #region Tree
-BinaryTree tree = new();
-tree.Add(7);
-tree.Add(8);
-tree.Add(10);
-tree.Add(4);
-tree.Add(5);
-tree.Add(4);
-tree.Add(9);
-tree.TraversePreOrder();
-Console.WriteLine("-----------------");
-tree.TraverseInOrder();
-Console.WriteLine("-----------------");
-tree.TraversePostOrder();
-Console.WriteLine("-----------------");
-Console.WriteLine(tree.Min());
+//BinaryTree tree = new();
+//tree.Add(7);
+//tree.Add(8);
+//tree.Add(10);
+//tree.Add(4);
+//tree.Add(5);
+//tree.Add(4);
+//tree.Add(9);
+//tree.TraversePreOrder();
+//Console.WriteLine("-----------------");
+//tree.TraverseInOrder();
+//Console.WriteLine("-----------------");
+//tree.TraversePostOrder();
+//Console.WriteLine("-----------------");
+//Console.WriteLine(tree.Min());
+//Console.WriteLine("-----------------");
+//Console.WriteLine(tree.IsBinarySearchTree());
 #endregion
+
+#region AVLNode
+AVLTree avlTree = new();
+avlTree.Insert(10);
+avlTree.Insert(20);
+avlTree.Insert(30);
+#endregion
+
+
 Console.ReadKey();

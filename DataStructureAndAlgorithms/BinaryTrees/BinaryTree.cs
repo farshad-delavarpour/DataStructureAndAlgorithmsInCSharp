@@ -17,7 +17,7 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             Node current = _root;
             while (true)
             {
-                if (current.Value < value)
+                if (current.Value > value)
                 {
                     if (current.Left == null)
                     {
@@ -120,6 +120,7 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             
             return false;
         }
+
         public int Height()
         {
             return Height(_root);
@@ -134,6 +135,42 @@ namespace DataStructureAndAlgorithms.BinaryTrees
                 return 0;
 
             return 1 + Math.Max(Height(root.Left), Height(root.Right));
+        }
+
+        public bool IsBinarySearchTree()
+        {
+            return IsBinarySearchTree(_root, int.MinValue, int.MaxValue);
+        }
+
+        private bool IsBinarySearchTree(Node node, int min, int max)
+        {
+            if (node is null)
+                return true;
+
+            if(node.Value < min || node.Value > max)
+                return false;
+
+            return IsBinarySearchTree(node.Left, min, node.Value - 1) && IsBinarySearchTree(node.Right, node.Value + 1, max);
+        }
+
+        public void PrintKDistanceNodes(int distance)
+        {
+            PrintKDistanceNode(_root, distance);
+        }
+
+        private void PrintKDistanceNode(Node node, int distance)
+        {
+            if (node is null)
+                return;
+            
+            if(distance == 0)
+            {
+                Console.WriteLine(node.Value);
+                return;
+            }
+
+            PrintKDistanceNode(_root.Left, distance - 1);
+            PrintKDistanceNode(_root.Right, distance - 1);
         }
 
         public int Min()
