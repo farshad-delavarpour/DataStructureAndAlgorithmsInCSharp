@@ -9,6 +9,7 @@ using DataStructureAndAlgorithms.StringManipulation;
 using System.Text;
 using DataStructureAndAlgorithms.BinaryTrees;
 using DataStructureAndAlgorithms.AVLTrees;
+using DataStructureAndAlgorithms.Tries;
 
 #region Array
 
@@ -131,11 +132,21 @@ var array = new Array(3);
 #endregion
 
 #region AVLNode
-AVLTree avlTree = new();
-avlTree.Insert(10);
-avlTree.Insert(20);
-avlTree.Insert(30);
+//AVLTree avlTree = new();
+//avlTree.Insert(10);
+//avlTree.Insert(20);
+//avlTree.Insert(30);
 #endregion
 
+#region Trie
+Trie trie = new();
+trie.Insert("mobile");
+trie.Insert("mouse");
+trie.Insert("monitor");
+trie.Insert("mousepad");
+string[] products = new string[5] { "mobile", "mouse", "monitor", "mousepad", "moneypot" };
 
+TrieRandom trieRandom = new();
+IList<IList<string>> result = trieRandom.SuggestedProducts(products, "mouse");
+#endregion
 Console.ReadKey();
