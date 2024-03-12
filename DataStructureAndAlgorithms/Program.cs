@@ -139,14 +139,25 @@ var array = new Array(3);
 #endregion
 
 #region Trie
-Trie trie = new();
-trie.Insert("mobile");
-trie.Insert("mouse");
-trie.Insert("monitor");
-trie.Insert("mousepad");
-string[] products = new string[5] { "mobile", "mouse", "monitor", "mousepad", "moneypot" };
+//Trie trie = new();
+//trie.Insert("mobile");
+//trie.Insert("mouse");
+//trie.Insert("monitor");
+//trie.Insert("mousepad");
+//string[] products = new string[5] { "mobile", "mouse", "monitor", "mousepad", "moneypot" };
 
-TrieRandom trieRandom = new();
-IList<IList<string>> result = trieRandom.SuggestedProducts(products, "mouse");
+//TrieRandom trieRandom = new();
+//IList<IList<string>> result = trieRandom.SuggestedProducts(products, "mouse");
+//var resu2lt = TrieRandom.CalculateFactorial(5);
+
+StringTrie trie = new("First");
+trie.Insert("First", "First-Child1");
+trie.Insert("First", "First-Child2");
+trie.Insert("First-Child1", "Child1-child1");
+trie.Insert("First-Child1", "Child1-child2");
+trie.Insert("First-Child2", "Child2-child1");
+trie.Insert("First-Child2", "Child2-child2");
+trie.PrintInOrder();
+
 #endregion
 Console.ReadKey();
