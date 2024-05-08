@@ -34,7 +34,7 @@ namespace DataStructureAndAlgorithms.Test
                     return middle;
                 if (middle == start || middle == end)
                     return -1;
-                return target < array[middle] ? Search(start, middle -1) : Search(middle + 1, end);
+                return target < array[middle] ? Search(start, middle - 1) : Search(middle + 1, end);
             }
         }
 
@@ -307,6 +307,40 @@ public static class LeetCode
             this.val = val;
             this.next = next;
         }
+    }
+    // 0, 0, 1, 1, 2, 3
+
+    public static int RemoveDuplicates(int[] nums)
+    {
+       if(nums.Length == 0) return 0;
+
+        int j = 0;
+        for(int i  = 1; i < nums.Length; i++)
+        {
+            if (nums[i] != nums[j])
+        }
+    }
+
+
+    public static int RemoveElement(int[] nums, int val)
+    {
+        
+        // [0,1,2,2,3,0,4,2]
+        int startIndex = 0;
+        int lenght = 0;
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == val)
+            {
+                startIndex++;
+            }
+            else if ((i - startIndex) > 0)
+            {
+                (nums[i], nums[i - startIndex]) = (nums[i - startIndex], nums[i]); 
+            }
+            lenght = Math.Max(lenght, i - startIndex + 1);
+        }
+        return lenght;
     }
 
     public static ListNode ReverseList(ListNode head)

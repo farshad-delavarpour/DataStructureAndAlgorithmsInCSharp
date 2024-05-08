@@ -89,7 +89,7 @@ namespace DataStructureAndAlgorithms.BinaryTrees
             TraverseInOrder(root.Right);
             Console.WriteLine(root);
         }
-
+        
         public void TraversePreOrder()
         {
             TraversePreOrder(_root);

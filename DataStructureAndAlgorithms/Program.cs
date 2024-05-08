@@ -150,14 +150,16 @@ var array = new Array(3);
 //IList<IList<string>> result = trieRandom.SuggestedProducts(products, "mouse");
 //var resu2lt = TrieRandom.CalculateFactorial(5);
 
-StringTrie trie = new("First");
-trie.Insert("First", "First-Child1");
-trie.Insert("First", "First-Child2");
-trie.Insert("First-Child1", "Child1-child1");
-trie.Insert("First-Child1", "Child1-child2");
-trie.Insert("First-Child2", "Child2-child1");
-trie.Insert("First-Child2", "Child2-child2");
-trie.PrintInOrder();
+//StringTrie trie = new("First");
+//trie.Insert("First", "First-Child1");
+//trie.Insert("First", "First-Child2");
+//trie.Insert("First-Child1", "Child1-child1");
+//trie.Insert("First-Child1", "Child1-child2");
+//trie.Insert("First-Child2", "Child2-child1");
+//trie.Insert("First-Child2", "Child2-child2");
+//trie.PrintInOrder();
+
+var result = LeetCode.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 });
 
 #endregion
 Console.ReadKey();
