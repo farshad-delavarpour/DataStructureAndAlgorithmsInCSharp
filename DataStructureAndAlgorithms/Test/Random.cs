@@ -308,19 +308,6 @@ public static class LeetCode
             this.next = next;
         }
     }
-    // 0, 0, 1, 1, 2, 3
-
-    public static int RemoveDuplicates(int[] nums)
-    {
-       if(nums.Length == 0) return 0;
-
-        int j = 0;
-        for(int i  = 1; i < nums.Length; i++)
-        {
-            if (nums[i] != nums[j])
-        }
-    }
-
 
     public static int RemoveElement(int[] nums, int val)
     {

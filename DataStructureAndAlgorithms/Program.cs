@@ -159,7 +159,5 @@ var array = new Array(3);
 //trie.Insert("First-Child2", "Child2-child2");
 //trie.PrintInOrder();
 
-var result = LeetCode.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 });
-
 #endregion
 Console.ReadKey();
