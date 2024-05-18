@@ -26,5 +26,16 @@ namespace DataStructureAndAlgorthms.Tests.ProgrammingSkillsTests
             int result = ProgrammingSkills.FindIndexOfFirstOccurrence(text, target);
             Assert.Equal(result, index);
         }
+
+        [Theory]
+        [InlineData("abab", true)]
+        [InlineData("abcdabcdabcd", true)]
+        [InlineData("ababdc", false)]
+        [InlineData("a", false)]
+        public void RepeatedSubstringPattern_ShouldReturn_ExpectedResult(string text, bool result)
+        {
+            bool hasRepeatedPattern = ProgrammingSkills.RepeatedSubstringPattern(text);
+            Assert.Equal(hasRepeatedPattern, result);
+        }
     }
 }

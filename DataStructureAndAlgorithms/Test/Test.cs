@@ -47,7 +47,7 @@ public class Test2
     public Node Flatten(Node head)
     {
         Process(head);
-        return list.First.Value;
+        return list.First?.Value;
     }
 
     private void Process(Node node)

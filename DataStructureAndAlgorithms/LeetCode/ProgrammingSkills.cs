@@ -30,7 +30,6 @@ public static class ProgrammingSkills
         return default;
     }
 
-    
     public static int FindIndexOfFirstOccurrence(string text, string target)
     {
         for (int i = 0; i <= text.Length - target.Length; i++)
@@ -41,4 +40,39 @@ public static class ProgrammingSkills
 
         return -1;
     }
+
+    /// <summary>
+    /// Given a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+    /// Example 1:
+    /// Input: s = "abab"
+    /// Output: true
+    /// Explanation: It is the substring "ab" twice.
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public static bool RepeatedSubstringPattern(string s)
+    {
+        for(int i = 1; i <= s.Length /2; i++)
+        {
+            if (s.Length % i != 0)
+                continue;
+
+            string[] strings = ToListArray(s, i);
+            if(strings.Distinct().Count() == 1) return true;
+        }
+        return false;
+
+        static string[] ToListArray(string str, int length)
+        {
+            string[] result = new string[str.Length / length];
+            int counter = 0;
+            for (int i = 0; i < str.Length; i += length)
+            {
+                result[counter++] = str.Substring(i, length);
+            }
+            return result;
+        }
+    }
+
+    
 }
