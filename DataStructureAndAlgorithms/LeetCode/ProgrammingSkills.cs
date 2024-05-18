@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace DataStructureAndAlgorithms.LeetCode;
 
 public static class ProgrammingSkills
@@ -12,15 +14,31 @@ public static class ProgrammingSkills
     /// <returns></returns>
     public static char FindTheDifference(string s, string t)
     {
-        int i = 0;
-
-        while (i < s.Length)
+        const int ASCII_SIZE = 256;
+        int[] frequencies = new int[ASCII_SIZE];
+        foreach (char @char in s)
         {
-            if (s[i] != s[i])
-                break;
-            i++;
+            frequencies[@char]++;
         }
 
-        return t[i];
+        foreach(char @char in t)
+        {
+            if (frequencies[@char] == 0)
+                return @char;
+            frequencies[@char]--;
+        }
+        return default;
+    }
+
+    
+    public static int FindIndexOfFirstOccurrence(string text, string target)
+    {
+        for (int i = 0; i <= text.Length - target.Length; i++)
+        {
+            if(text.Substring(i, target.Length) == target)
+                return i;
+        }
+
+        return -1;
     }
 }

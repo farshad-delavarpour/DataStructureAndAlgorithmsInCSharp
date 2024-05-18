@@ -1,4 +1,5 @@
 ﻿using DataStructureAndAlgorithms.LeetCode;
+using System.Collections.Generic;
 
 namespace DataStructureAndAlgorthms.Tests.ProgrammingSkillsTests
 {
@@ -13,6 +14,17 @@ namespace DataStructureAndAlgorthms.Tests.ProgrammingSkillsTests
         {
             char result = ProgrammingSkills.FindTheDifference(first, second);
             Assert.Equal(diffenece, result);
+        }
+
+        [Theory]
+        [InlineData("sometext", "text", 4)]
+        [InlineData("text", "1", -1)]
+        [InlineData("mississippi", "issip", 4)]
+        [InlineData("leetcode", "leeto", -1)]
+        public void FindIndex_ShouldReturn_TheFirstIndexOfOccurance(string text, string target, int index)
+        {
+            int result = ProgrammingSkills.FindIndexOfFirstOccurrence(text, target);
+            Assert.Equal(result, index);
         }
     }
 }

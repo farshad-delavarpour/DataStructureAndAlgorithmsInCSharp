@@ -55,7 +55,7 @@ namespace DataStructureAndAlgorithms.Arrays
             if (_count == 0)
                 return -1;
 
-            var max = 0;
+            int max = int.MinValue;
 
             foreach (var item in _items)
             {
